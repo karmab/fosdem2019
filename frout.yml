@@ -1,0 +1,8 @@
+---
+- name: Test playbook for devconf
+  hosts: testansible
+  become: yes
+  gather_facts: true
+  tasks:
+    - name: do whatever
+      shell: "echo this rocks >/etc/motd"

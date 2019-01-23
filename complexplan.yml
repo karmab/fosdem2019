@@ -1,0 +1,29 @@
+parameters:
+   nodes: 3
+   template: rhel-8.0-beta-1-x86_64-kvm.qcow2
+   domain: default
+   disk_size: 40
+   packages:
+   - nc
+   - nmap
+   keys:
+    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/AvM9VbO2yiIb9AillBp/kTr8jqIErRU1LFKqhwPTm4AtVIjFSaOuM4AlspfCUIz9IHBrDcZmbcYKai3lC3JtQic7M/a1OWUjWE1ML8CEvNsGPGu5yNVUQoWC0lmW5rzX9c6HvH8AcmfMmdyQ7SgcAnk0zir9jw8ed2TRAzHn3vXFd7+saZLihFJhXG4zB8vh7gJHjLfjIa3JHptWzW9AtqF9QsoBY/iu58Rf/hRnrfWscyN3x9pGCSEqdLSDv7HFuH2EabnvNFFQZr4J1FYzH/fKVY3Ppt3rf64UWCztDu7L44fPwwkI7nAzdmQVTaMoD3Ej8i7/OSFZsC2V5IBT kboumedh@bumblefoot
+    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMBW0X4Y3lulk5VfxXp88wBdwrhieAG/iO75GTx33Q/stGlFV1oj6AIf38+Cwdn/uyBbTL/oDR+11rQRIv4xK6B/OOltJv/pQSTWixF15pJ9AUIwwKqriSeBFztBtGrbtj4UeJ4PX/iklROLsjMwRoHkn3jP6C4HEBjdHY9QUurMc2o4UL7rEPFqgGJu1QCeprBaJLpXzYWE03TH3CpNMYawGMIIvv75R7rdZg1qhtkVBvi5tAjPa+mfdnqw51U8P2lYvnFg/JfP2HjXcdBvKCotXH3OaMGmKhEfyEZP2awq6iNRkuFzy3Q9bM9wDt/welJYnQcGXwA0tiuj8n0/hz scollier@scollier
+
+{% for node in range(0, nodes) %}
+devconf{{ "%03.d" | format(node+1) }}:
+ template: {{ template }}
+ keys: {{ keys }}
+ domain: {{ domain }}
+ nets:
+  - name: default
+ disks:
+  - size: {{ disk_size }}
+ pool: default
+ files: 
+  - file1.txt
+  - origin: file2.txt
+    path: /etc/file2.txt
+ scripts:
+  - script1.sh
+{% endfor %}

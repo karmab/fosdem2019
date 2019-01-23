@@ -1,0 +1,1 @@
+i am vm {{ name }} and there are {{ nodes }} nodes

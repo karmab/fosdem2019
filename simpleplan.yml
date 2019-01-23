@@ -1,0 +1,24 @@
+vm1:
+  memory: 512
+  numcpus: 2
+  nets: 
+   - default
+  pool: default
+  template: CentOS-7-x86_64-GenericCloud.qcow2
+  reservedns: True
+  reservehost: False
+vm2:
+  memory: 512
+  numcpus: 2
+  cloudinit: true
+  nets: 
+   - default
+  disks:
+   - 20
+  pool: default
+  template: CentOS-7-x86_64-GenericCloud.qcow2
+  reservedns: False
+vm3:
+  memory: 2048
+  numcpus: 6
+  cloudinit: false
