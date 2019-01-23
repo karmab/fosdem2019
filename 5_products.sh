@@ -15,7 +15,7 @@ desc "It s just a git repo btw, cloned in ~/.kcli/plans"
 run "ls ~/.kcli/plans/karmab"
 
 backtotop
-desc "List products"
+desc "List products. The sample ones demo some of the functionality"
 run "kcli list --products"
 
 backtotop

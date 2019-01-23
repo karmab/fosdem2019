@@ -63,6 +63,10 @@ desc "Create the plan, giving it a random name and overriding some of the parame
 run "kcli plan -f complexplan.yml -P nodes=5 -P disk_size=30"
 
 backtotop
+desc "Lets wait a few seconds for vms to get their ip"
+run ""
+
+backtotop
 desc "Connect to one of the resulting vms and check how files were copied and scripts executed"
 run "kcli ssh devconf001"
 

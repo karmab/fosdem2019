@@ -7,6 +7,10 @@ desc "Let's add a first provider and launch a vm on it"
 run ""
 
 backtotop
+desc "Let's delete my current kcli config"
+run "rm ~/.kcli/config.yml"
+
+backtotop
 desc "Bootstrap a remote libvirt client, naming it mylibvirt and using qemu+ssh as uri"
 run "kcli bootstrap -n mylibvirt -H 192.168.1.5"
 
