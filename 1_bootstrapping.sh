@@ -43,11 +43,11 @@ desc "Create a vm named vm1 with default settings"
 run "kcli vm -p CentOS-7-x86_64-GenericCloud.qcow2 vm1"
 
 backtotop
-desc "Create a vm named vm2 ith custom settings, memory and disks in this case"
+desc "Create a vm named vm2 with custom settings, memory and disks in this case"
 run "kcli vm -p CentOS-7-x86_64-GenericCloud.qcow2 vm2 -P memory=2048 -P disks=[10,20]"
 
 backtotop
-desc "List vms. Note we have the ip"
+desc "List vms. Note ips get reported"
 run "kcli list"
 
 backtotop
@@ -57,7 +57,3 @@ run "kcli ssh vm1"
 backtotop
 desc "Delete previous vms"
 run "kcli delete --yes vm1 vm2"
-
-backtotop
-desc "Delete cirros template"
-run "kcli delete --template --yes cirros-0.4.0-x86_64-disk.img"

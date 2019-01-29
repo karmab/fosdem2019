@@ -58,9 +58,3 @@ run "kcli ssh testansible02"
 backtotop
 desc "There are also ansible kcli modules you can check"
 run ""
-
-backtotop
-desc "Delete all the vms used in this demo"
-run "kcli delete --yes testansible01 testansible02"
-run "kcli delete --yes vm11 vm12"
-run "kcli -C gcp_cnvlab delete --yes vm13 vm14"

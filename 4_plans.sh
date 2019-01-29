@@ -19,12 +19,8 @@ desc "Check objects are there"
 run "kcli list"
 
 backtotop
-desc "Check info of vm1"
-run "kcli info vm1"
-
-backtotop
 desc "Rerun the plan and see how it doesnt create vms"
-run "kcli plan -f simpleplan.yml"
+run "kcli plan -f simpleplan.yml myplan"
 
 backtotop
 desc "Delete one of the vms"
@@ -39,10 +35,6 @@ desc "Stop all the vms of the plan"
 run "kcli plan --stop myplan"
 
 backtotop
-desc "Start all the vms of the plan"
-run "kcli plan --start myplan"
-
-backtotop
 desc "Delete the plan"
 run "kcli plan --delete --yes myplan"
 
@@ -51,12 +43,12 @@ desc "Here s a more complex plan, using parameters"
 run "cat complexplan.yml"
 
 backtotop
-desc "Check the script to be applied"
-run "cat script1.sh"
-
-backtotop
 desc "Check one of the files to be injected"
 run "cat file1.txt"
+
+backtotop
+desc "Check the script to be applied"
+run "cat script1.sh"
 
 backtotop
 desc "Create the plan, giving it a random name and overriding some of the parameters"
@@ -67,9 +59,5 @@ desc "Lets wait a few seconds for vms to get their ip"
 run ""
 
 backtotop
-desc "Connect to one of the resulting vms and check how files were copied and scripts executed"
-run "kcli ssh devconf001"
-
-backtotop
-desc "Delete vms"
-run "kcli delete --yes devconf001 devconf002 devconf003 devconf004 devconf005"
+desc "Connect to one of the resulting vms and check how files were copied"
+run "kcli ssh fosdem001"

@@ -11,7 +11,7 @@ parameters:
     - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMBW0X4Y3lulk5VfxXp88wBdwrhieAG/iO75GTx33Q/stGlFV1oj6AIf38+Cwdn/uyBbTL/oDR+11rQRIv4xK6B/OOltJv/pQSTWixF15pJ9AUIwwKqriSeBFztBtGrbtj4UeJ4PX/iklROLsjMwRoHkn3jP6C4HEBjdHY9QUurMc2o4UL7rEPFqgGJu1QCeprBaJLpXzYWE03TH3CpNMYawGMIIvv75R7rdZg1qhtkVBvi5tAjPa+mfdnqw51U8P2lYvnFg/JfP2HjXcdBvKCotXH3OaMGmKhEfyEZP2awq6iNRkuFzy3Q9bM9wDt/welJYnQcGXwA0tiuj8n0/hz scollier@scollier
 
 {% for node in range(0, nodes) %}
-devconf{{ "%03.d" | format(node+1) }}:
+fosdem{{ "%03.d" | format(node+1) }}:
  template: {{ template }}
  keys: {{ keys }}
  domain: {{ domain }}

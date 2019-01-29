@@ -19,7 +19,7 @@ desc "List products. The sample ones demo some of the functionality"
 run "kcli list --products"
 
 backtotop
-desc "List products of a given group(which basically live under a common directory)"
+desc "List products of a given group (which basically live under a common directory)"
 run "kcli list --products --group openshift"
 
 backtotop

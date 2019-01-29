@@ -3,15 +3,16 @@
 source /Users/kboumedh/bin/util.sh
 
 backtotop
-desc "Let's use profiles"
-
-backtotop
-desc "List profiles"
-run "kcli list --profiles "
+desc "Let's use profiles, to create vms with custom settings"
+run ""
 
 backtotop
 desc "Profiles are defined in ~/.kcli/profiles.yml. Lets check"
 run "cat ~/.kcli/profiles.yml"
+
+backtotop
+desc "List profiles"
+run "kcli list --profiles"
 
 backtotop
 desc "Create a vm with a random name from profile fosdem"

@@ -27,10 +27,6 @@ desc "Create a vm in my aws client"
 run "kcli -C aws vm -p CentOS-7-x86_64-GenericCloud.qcow2 vm10"
 
 backtotop
-desc "Create a vm in my ovirt client"
-run "kcli -C my_ovirt vm -p CentOS-7-x86_64-GenericCloud.qcow2 vm10"
-
-backtotop
 desc "list vms on my default provider"
 run "kcli list"
 
@@ -43,12 +39,9 @@ desc "list vms on my  aws provider"
 run "kcli -C aws list"
 
 backtotop
-desc "list vms on my ovirt provider"
-run "kcli -C my_ovirt list"
-
-backtotop
-desc "And we would do the same in kubevirt or openstack"
+desc "And we would do the same in kubevirt, ovirt or openstack"
+run ""
 
 backtotop
 desc "Let's delete vm10 on each provider"
-run "kcli -C aws,gcp_cnvlab,my_ovirt,twix delete --yes vm10"
+run "kcli -C aws,gcp_cnvlab,twix delete --yes vm10"
